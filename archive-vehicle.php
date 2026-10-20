@@ -20,7 +20,10 @@ $sort = nl_filter_value( 'sort' ) ?: 'newest';
 <section class="section section--inventory">
 	<div class="container inventory">
 		<aside class="inventory__filters">
-			<?php get_template_part( 'template-parts/filters' ); ?>
+			<button class="inventory__filters-toggle btn btn--ghost" type="button" aria-expanded="false" aria-controls="inventory-filters" data-filters-toggle><?php echo nl_icon( 'search' ); ?> Filters</button>
+			<div class="inventory__filters-body" id="inventory-filters">
+				<?php get_template_part( 'template-parts/filters' ); ?>
+			</div>
 		</aside>
 		<div class="inventory__results">
 			<div class="inventory__bar">

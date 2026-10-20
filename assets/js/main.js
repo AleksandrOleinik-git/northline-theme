@@ -47,6 +47,17 @@
 		});
 	});
 
+	/* Collapsible filters on small screens */
+	var ftoggle = $('[data-filters-toggle]');
+	if (ftoggle) {
+		var aside = ftoggle.closest('.inventory__filters');
+		if (window.location.search.length > 1) { aside.classList.add('is-open'); ftoggle.setAttribute('aria-expanded', 'true'); }
+		ftoggle.addEventListener('click', function () {
+			var open = aside.classList.toggle('is-open');
+			ftoggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+		});
+	}
+
 	/* Sort select on the inventory page: reload with ?sort= */
 	var sort = $('[data-sort]');
 	if (sort) {
